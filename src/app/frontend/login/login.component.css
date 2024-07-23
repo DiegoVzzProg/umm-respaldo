@@ -1,0 +1,61 @@
+.umm-span {
+    max-height: calc(100% - 2px);
+    background-color: #bebebe;
+    outline: none;
+}
+
+.umm-span svg {
+    max-width: 20px;
+    fill: white;
+}
+
+.umm-border {
+    border: 1px solid #bebebe;
+}
+
+.umm-font-size-responsive {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+.umm-formulario {
+    box-shadow: 0px 1px 8px #bebebe;
+    -webkit-box-shadow: 0px 1px 8px #bebebe;
+    -moz-box-shadow: 0px 1px 8px #bebebe;
+}
+
+.umm-input-group {
+    position: relative;
+    display: flex;
+    border: 1px solid #bebebe;
+}
+
+.umm-input-group span {
+    transform: translate(15px, 7px);
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.4s;
+}
+
+.umm-input-group input {
+    outline: none;
+    padding: 8px 15px;
+    width: 100%;
+}
+
+.umm-input-group input:focus ~ span {
+    padding: 0px 5px;
+    transition: all 0.4s;
+    transform: translate(1px, -12px);
+    font-size: 0.8rem;
+    background-color: white;
+}
+
+.umm-input-group input.valid ~ span {
+    padding: 0px 5px;
+    transition: all 0.4s;
+    transform: translate(1px, -12px);
+    font-size: 0.8rem;
+    background-color: white;
+}

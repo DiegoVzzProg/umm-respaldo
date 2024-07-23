@@ -1,0 +1,144 @@
+<div id="home" class="relative flex flex-col w-full h-full">
+  <section
+    class="flex mt-[10px] py-[10px] gap-[10px] flex-wrap sm:flex-nowrap md:flex-nowrap lg:flex-nowrap justify-center">
+    <div class="flex flex-col mx-[10px] w-full sm:w-6/12 md:w-6/12 lg:w-6/12">
+      <div class="flex p-[10px] bg-[#E9ECEF] rounded-t-md">
+        <p class="text-[#495057] font-semibold">
+          Calificaciones
+        </p>
+      </div>
+      <div class="p-[10px] flex">
+        <table mat-table [dataSource]="DatosCalificacion">
+
+          <!-- Tetra Column -->
+          <ng-container matColumnDef="tetra">
+            <th mat-header-cell *matHeaderCellDef> Tetra </th>
+            <td mat-cell *matCellDef="let element"> {{element.tetra}} </td>
+          </ng-container>
+
+          <!-- Materia Column -->
+          <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef> Materia </th>
+            <td mat-cell *matCellDef="let element"> {{element.materia}} </td>
+          </ng-container>
+
+          <!-- Calificacion Column -->
+          <ng-container matColumnDef="calificacion">
+            <th mat-header-cell *matHeaderCellDef> Calificación </th>
+            <td mat-cell *matCellDef="let element"> {{element.calificacion}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsCalificacion"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsCalificacion;"></tr>
+        </table>
+      </div>
+    </div>
+    <div class="flex flex-col mx-[10px] w-full sm:w-6/12 md:w-6/12 lg:w-6/12">
+      <div class="flex p-[10px] bg-[#E9ECEF] rounded-t-md">
+        <p class="text-[#495057] font-semibold">
+          Tareas
+        </p>
+      </div>
+      <div class="p-[10px] flex">
+        <table mat-table [dataSource]="DatosTareas">
+
+          <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef> Materia </th>
+            <td mat-cell *matCellDef="let element"> {{element.materia}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef> Titulo </th>
+            <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button class="bg-[#212529] text-[#F8F9FA] px-[10px] py-[5px] rounded">
+                Ver
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsTareas"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsTareas;"></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex mt-[10px] py-[10px] gap-[10px] flex-wrap sm:flex-nowrap md:flex-nowrap lg:flex-nowrap justify-center">
+    <div class="flex flex-col mx-[10px] w-full">
+      <div class="flex p-[10px] bg-[#E9ECEF] rounded-t-md">
+        <p class="text-[#495057] font-semibold">
+          Pagos y Adeudos {{'(' + TituloPagoTemporal + ')'}}
+        </p>
+      </div>
+      <div class="p-[10px] flex">
+        <table mat-table [dataSource]="DatosAdeudos">
+
+          <ng-container matColumnDef="tetra">
+            <th mat-header-cell *matHeaderCellDef> Tetra </th>
+            <td mat-cell *matCellDef="let element"> {{element.tetra}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha a pagar </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="adeudo">
+            <th mat-header-cell *matHeaderCellDef> Pago </th>
+            <td mat-cell *matCellDef="let element">${{formatNumber(element.adeudo)}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button class="bg-[#212529] text-[#F8F9FA] px-[10px] py-[5px] rounded">
+                Ver
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsAdeudos"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsAdeudos;"></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex mt-[10px] py-[10px] gap-[10px] flex-wrap sm:flex-nowrap md:flex-nowrap lg:flex-nowrap justify-center">
+    <div class="flex flex-col mx-[10px] w-full">
+      <div class="flex p-[10px] bg-[#E9ECEF] rounded-t-md">
+        <p class="text-[#495057] font-semibold">
+          Noticias
+        </p>
+      </div>
+      <div class="p-[10px] flex flex-col gap-[10px]">
+        <p class="font-semibold">
+          Concurso de Composición de Letra y Música para mi Universidad 2024
+        </p>
+        <div class="flex flex-wrap sm:flex-nowrap md:flex-nowrap lg:flex-nowrap">
+          <p>
+            ¡Hola!
+            <br> <br>
+            En la UMM estamos de fiesta y queremos invitarte a ser parte en una de las actividades programadas para
+            celebrar.
+            <br> <br>
+            Revisa las bases en la convocatoria.
+          </p>
+          <div class="w-full max-w-[500px]">
+            <img
+              src="assets/img/CONCURSO-DE-COMPOSICION-DE-LETRA-Y-MUSICA-PARA-MI-UNIVERSIDAD-2024---POST_20240628200522883.jpg"
+              alt="" class="w-full">
+          </div>
+        </div>
+
+        <div class="w-full h-[2px] bg-[#E9ECEF]"></div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,10 @@
+.viñeta {
+    width: 0;
+    height: 0;
+    border-bottom: 16px solid #212529;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    right: 0px;
+    top: -15px;
+}

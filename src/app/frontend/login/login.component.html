@@ -1,0 +1,65 @@
+<div class="flex items-center justify-center w-full h-full text-[#adb5bd]">
+  <div class="w-full h-full max-h-[500px] px-[5px] py-[5px] pb-[6px] flex justify-center items-center flex-col">
+    <form action="" class="w-full h-full max-w-[500px] min-h-[500px] bg-[#fff] umm-formulario flex flex-col">
+      <nav class="flex w-full " id="navegacion">
+        <button class="w-full umm-font-size-responsive p-[10px] text-center bg-[#fff] outline-none">
+          Inicio de Sesión
+        </button>
+        <button class="w-full umm-font-size-responsive p-[10px] text-center bg-[#f8f9fa] outline-none">
+          Inicio de Sesión con Office365
+        </button>
+      </nav>
+      <span class="flex px-[35px] pt-[27px]">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="187" height="46"
+          viewBox="0 0 187 46" fill="none">
+          <rect width="187" height="46" fill="url(#pattern0_326_3)" />
+          <defs>
+            <pattern id="pattern0_326_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use href="#image0_326_3" transform="matrix(0.000245254 0 0 0.000997009 -0.00227926 0)" />
+            </pattern>
+            <image id="image0_326_3" width="4096" height="1003" href="assets/img/logos-umm-01.png" />
+          </defs>
+        </svg>
+      </span>
+      <div class="flex flex-col px-[35px] gap-[20px] items-center h-full pt-[30px]">
+        <div class="flex items-center w-full">
+          <div class="w-full bd umm-input-group">
+            <input #inputNombreUsu type="text" name="" (input)="agregarClass(inputNombreUsu)">
+            <span>
+              Nombre de usuario
+            </span>
+
+          </div>
+          <span class="w-full max-w-[30px] h-full umm-border umm-span flex px-[5px] justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor"
+              class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+          </span>
+        </div>
+        <div class="flex items-center w-full">
+          <div class="w-full umm-input-group">
+            <input #inputPassword type="password" name="" (input)="agregarClass(inputPassword)">
+            <span>
+              Contraseña
+            </span>
+          </div>
+          <span class="w-full max-w-[30px] h-full flex px-[5px] justify-center umm-span umm-border">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 24 24">
+              <path
+                d="M 12 1 C 8.6761905 1 6 3.6761905 6 7 L 6 8 C 4.9 8 4 8.9 4 10 L 4 20 C 4 21.1 4.9 22 6 22 L 18 22 C 19.1 22 20 21.1 20 20 L 20 10 C 20 8.9 19.1 8 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 8 8 L 8 7 C 8 4.7238095 9.7238095 3 12 3 z M 12 13 C 13.1 13 14 13.9 14 15 C 14 16.1 13.1 17 12 17 C 10.9 17 10 16.1 10 15 C 10 13.9 10.9 13 12 13 z">
+              </path>
+            </svg>
+          </span>
+        </div>
+
+        <div class="flex w-full umm-border">
+          <button class="w-full hfill bg-[#bebebe] text-[#FFF] font-bold py-[10px]" type="button"
+            (click)="validarUsuario(this.inputNombreUsu.value, this.inputPassword.value)">
+            Iniciar Session
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
